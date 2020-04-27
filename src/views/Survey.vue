@@ -24,7 +24,7 @@ customWidget(SurveyVue);
 
 export default {
   components: {
-    Survey,
+    Survey
   },
 
   computed: {
@@ -50,20 +50,20 @@ export default {
                     "https://miro.medium.com/max/701/1*upFupNHCNiTO6ltvJCukxg.png",
 
                   imageHeight: 400,
-                  imageWidth: 400,
+                  imageWidth: 400
                 },
                 {
                   type: "html",
                   name: "question3",
                   html: {
                     nl:
-                      "<article class='intro'>   <div class='intro__body wysiwyg'>       <p>In this section, you will be asked about your current employment and any other way you and your partner currently receive income.</p>       <p>It will be handy to have the following in front of you:</p>       <ul>        \t<li>        \t\tPayslip (for employment details)        \t</li>        \t<li>        \t\t<p>A current Centrelink Schedule for any account based pension from super, annuities, or other income stream products that you own</p>        \t\t<p>        \t\t\tIf you don't have a current one you can get these schedules by contacting your income stream provider        \t\t</p>        \t</li>        \t<li>        \t\tLatest statement from any payments (from Centrelink or other authority)        \t</li>       </ul>         </div> </article>",
-                  },
-                },
+                      "<article class='intro'>   <div class='intro__body wysiwyg'>       <p>In this section, you will be asked about your current employment and any other way you and your partner currently receive income.</p>       <p>It will be handy to have the following in front of you:</p>       <ul>        \t<li>        \t\tPayslip (for employment details)        \t</li>        \t<li>        \t\t<p>A current Centrelink Schedule for any account based pension from super, annuities, or other income stream products that you own</p>        \t\t<p>        \t\t\tIf you don't have a current one you can get these schedules by contacting your income stream provider        \t\t</p>        \t</li>        \t<li>        \t\tLatest statement from any payments (from Centrelink or other authority)        \t</li>       </ul>         </div> </article>"
+                  }
+                }
               ],
-              readOnly: true,
-            },
-          ],
+              readOnly: true
+            }
+          ]
         },
         {
           name: "Questionnaire",
@@ -80,99 +80,98 @@ export default {
                 { value: "2", text: { nl: "2: Oneens" } },
                 { value: "3", text: { nl: "3: Neutraal" } },
                 { value: "4", text: { nl: "4: Eens" } },
-                { value: "5", text: { nl: "5: Helemaal eens" } },
+                { value: "5", text: { nl: "5: Helemaal eens" } }
               ],
               rows: [
                 {
                   value: "row1",
                   text: {
-                    nl: "1. Ik ben vaak degene die een gesprek aanknoopt.",
-                  },
+                    nl: "1. Ik ben vaak degene die een gesprek aanknoopt."
+                  }
                 },
                 {
                   value: "row2",
                   text: {
                     nl:
-                      "2. Ik vind het absoluut geen probleem om in het middelpunt van de belangstelling te staan.",
-                  },
+                      "2. Ik vind het absoluut geen probleem om in het middelpunt van de belangstelling te staan."
+                  }
                 },
                 { value: "row3", text: { nl: "3. Ik praat weinig. " } },
                 {
                   value: "row4",
-                  text: { nl: "4. Ik barst van de energie. " },
+                  text: { nl: "4. Ik barst van de energie. " }
                 },
                 {
                   value: "row5",
                   text: {
-                    nl: "5. Ik steek anderen altijd aan met mijn enthousiasme.",
-                  },
+                    nl: "5. Ik steek anderen altijd aan met mijn enthousiasme."
+                  }
                 },
                 {
                   value: "row6",
-                  text: { nl: "6. Ik hou ervan om alleen te zijn." },
+                  text: { nl: "6. Ik hou ervan om alleen te zijn." }
                 },
                 {
                   value: "row7",
                   text: {
                     nl:
-                      "7. Ik heb liever een handjevol echte vrienden dan een leger aan vrienden. ",
-                  },
+                      "7. Ik heb liever een handjevol echte vrienden dan een leger aan vrienden. "
+                  }
                 },
                 {
                   value: "row8",
                   text: {
                     nl:
-                      "8. Ik geef de voorkeur aan één-op-één gesprekken boven groepsactiviteiten",
-                  },
+                      "8. Ik geef de voorkeur aan één-op-één gesprekken boven groepsactiviteiten"
+                  }
                 },
                 {
                   value: "row9",
                   text: {
                     nl:
-                      "9. Op feestjes of sociale gelegenheden heb ik de tijd van mijn leven. ",
-                  },
+                      "9. Op feestjes of sociale gelegenheden heb ik de tijd van mijn leven. "
+                  }
                 },
                 {
                   value: "row10",
-                  text: { nl: "10. Ik denk niet na voor ik iets zeg." },
+                  text: { nl: "10. Ik denk niet na voor ik iets zeg." }
                 },
                 {
                   value: "row11",
                   text: {
-                    nl: "11. Mensen zeggen dat ik een goede luisteraar ben. ",
-                  },
+                    nl: "11. Mensen zeggen dat ik een goede luisteraar ben. "
+                  }
                 },
                 {
                   value: "row12",
                   text: {
-                    nl:
-                      "12. Ik vind het fijn om nieuwe mensen te leren kennen.",
-                  },
+                    nl: "12. Ik vind het fijn om nieuwe mensen te leren kennen."
+                  }
                 },
                 {
                   value: "row13",
-                  text: { nl: "13. Ik neem niet graag grote risico’s." },
+                  text: { nl: "13. Ik neem niet graag grote risico’s." }
                 },
                 {
                   value: "row14",
                   text: {
                     nl:
-                      "14. Ik neem niet graag de telefoon op, maar laat mensen liever mijn voicemail inspreken. ",
-                  },
-                },
+                      "14. Ik neem niet graag de telefoon op, maar laat mensen liever mijn voicemail inspreken. "
+                  }
+                }
               ],
-              isAllRowRequired: true,
-            },
+              isAllRowRequired: true
+            }
           ],
           questionTitleLocation: "top",
           title: {
-            nl: "Geef aan in hoeverre je het eens bent met elke stelling.",
+            nl: "Geef aan in hoeverre je het eens bent met elke stelling."
           },
           description: {
             nl:
-              "1 = Sterk oneens\n2 = Oneens\n3 = Neutraal\n4 = Eens\n5 = Helemaal eens\n",
-          },
-        },
+              "1 = Sterk oneens\n2 = Oneens\n3 = Neutraal\n4 = Eens\n5 = Helemaal eens\n"
+          }
+        }
       ],
       calculatedValues: [{ name: "Extrovert" }],
       sendResultOnPageNext: true,
@@ -180,12 +179,12 @@ export default {
       pagePrevText: { nl: "Vorige" },
       pageNextText: { nl: "Volgende" },
       questionTitlePattern: "numTitle",
-      firstPageIsStarted: true,
+      firstPageIsStarted: true
     };
 
     var model = new SurveyVue.Model(json);
 
-    model.onComplete.add(function (result) {
+    model.onComplete.add(function(result) {
       var surveyData = result.data;
       const {
         row1,
@@ -201,7 +200,7 @@ export default {
         row11,
         row12,
         row13,
-        row14,
+        row14
       } = surveyData.questionnaire;
 
       let extravertScore =
@@ -252,15 +251,15 @@ export default {
           extravertScore: extravertScore,
           introvertScore: introvertScore,
           absoluteScore: absoluteScore,
-          text: intitial,
-        },
+          text: intitial
+        }
       });
     });
 
     return {
-      survey: model,
+      survey: model
     };
-  },
+  }
 };
 </script>
 

@@ -24,15 +24,15 @@ const router = new VueRouter({
   routes: [
     { path: "/", component: Survey },
     // Just use them normally in the route config
-    { name: "completed", path: "/completed", component: Completed },
-  ],
+    { name: "completed", path: "/completed", component: Completed, props: true }
+  ]
 });
 
 // Now the app has started!
 
 export default {
   name: "app",
-  router: router,
+  router: router
 };
 </script>
 
