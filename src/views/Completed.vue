@@ -1,19 +1,20 @@
 <template>
   <div class="container">
-    <div class="col-lg-3 centered">
-      <img src="../assets/logo.png" />
+    <div class="jumbotron">
+      <h1 class="display-4">Resultaat</h1>
+      <p class="lead">Bedankt voor het invullen van de vragenlijst.</p>
+      <hr class="my-4" />
+      <p>Je score is {{ this.absoluteScore.toString() }}.</p>
+      <p>Dit wil zeggen: {{ this.text.toString() }}.</p>
+      <p class="lead">
+        <router-link to="/" tag="button" class="btn btn-primary btn-lg"
+          >Opnieuw</router-link
+        >
+      </p>
     </div>
-    <div class="col-lg-9 jumbotron">
-      <h1>Resultaten</h1>
-      <p>Bedankt voor het invullen van de vragenlijst.</p>
-      <p>Je score is {{ absoluteScore.toString() }}: {{ text }}</p>
 
-      <p></p>
-      <p></p>
-    </div>
-
-    <div class="container">
-      <canvas ref="canvas" width="600" height="100"></canvas>
+    <div class="row">
+      <canvas ref="canvas" class="col-sm-6 col-xs-6"></canvas>
     </div>
   </div>
 </template>
