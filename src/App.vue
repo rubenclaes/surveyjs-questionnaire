@@ -14,10 +14,7 @@ Vue.use(VueRouter);
 
 const Survey = () =>
   import(/* webpackChunkName: "survey" */ "./views/Survey.vue");
-const Creator = () =>
-  import(/* webpackChunkName: "creator" */ "./views/Creator.vue");
-const ExportToPDF = () =>
-  import(/* webpackChunkName: "exporttopdf" */ "./views/ExportToPDF.vue");
+
 const Completed = () =>
   import(/* webpackChunkName: "completed" */ "./views/Completed.vue");
 
@@ -28,8 +25,6 @@ const router = new VueRouter({
     { path: "/", component: Survey },
     // Just use them normally in the route config
     { name: "completed", path: "/completed", component: Completed },
-    { path: "/creator", component: Creator },
-    { path: "/exportpdf", component: ExportToPDF },
   ],
 });
 

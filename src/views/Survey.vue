@@ -15,24 +15,12 @@ var Survey = SurveyVue.Survey;
 Survey.cssType = "bootstrap";
 
 import * as widgets from "surveyjs-widgets";
-import "inputmask/dist/inputmask/phone-codes/phone.js";
 
 import { init as customWidget } from "../components/customwidget";
 
 widgets.icheck(SurveyVue);
-widgets.select2(SurveyVue);
-widgets.inputmask(SurveyVue);
-widgets.jquerybarrating(SurveyVue);
-widgets.jqueryuidatepicker(SurveyVue);
-widgets.nouislider(SurveyVue);
-widgets.select2tagbox(SurveyVue);
-widgets.sortablejs(SurveyVue);
-widgets.ckeditor(SurveyVue);
-widgets.autocomplete(SurveyVue);
-widgets.bootstrapslider(SurveyVue);
-customWidget(SurveyVue);
 
-SurveyVue.Serializer.addProperty("question", "tag:number");
+customWidget(SurveyVue);
 
 export default {
   components: {
