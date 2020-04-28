@@ -28,29 +28,16 @@ const router = new VueRouter({
       name: "completed",
       path: "/completed",
       component: Completed,
-      props: true,
-      beforeEnter: (to, from, next) => {
-        if (
-          to.params.extravertScore &&
-          to.params.introvertScore &&
-          to.params.absoluteScore
-        ) {
-          next();
-        } else {
-          router.push({
-            path: "/",
-          });
-        }
-      },
-    },
-  ],
+      props: true
+    }
+  ]
 });
 
 // Now the app has started!
 
 export default {
   name: "app",
-  router: router,
+  router: router
 };
 </script>
 

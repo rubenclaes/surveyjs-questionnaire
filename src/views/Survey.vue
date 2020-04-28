@@ -24,7 +24,7 @@ customWidget(SurveyVue);
 
 export default {
   components: {
-    Survey,
+    Survey
   },
 
   computed: {
@@ -50,20 +50,20 @@ export default {
                     "https://miro.medium.com/max/701/1*upFupNHCNiTO6ltvJCukxg.png",
 
                   imageHeight: 400,
-                  imageWidth: 400,
+                  imageWidth: 400
                 },
                 {
                   type: "html",
                   name: "question3",
                   html: {
                     nl:
-                      "<article class='intro'>   <div class='intro__body wysiwyg'>       <p>Doe de test: ben je introvert of extravert? Klik op start en kom het te weten!</p>",
-                  },
-                },
+                      "<article class='intro'>   <div class='intro__body wysiwyg'>       <p>Doe de test: ben je introvert of extravert? Klik op start en kom het te weten!</p>"
+                  }
+                }
               ],
-              readOnly: true,
-            },
-          ],
+              readOnly: true
+            }
+          ]
         },
         {
           name: "Questionnaire",
@@ -80,108 +80,107 @@ export default {
                 { value: "2", text: { nl: "Oneens" } },
                 { value: "3", text: { nl: "Neutraal" } },
                 { value: "4", text: { nl: "Eens" } },
-                { value: "5", text: { nl: "Helemaal eens" } },
+                { value: "5", text: { nl: "Helemaal eens" } }
               ],
               rows: [
                 {
                   value: "row1",
                   text: {
-                    nl: "1. Ik ben vaak degene die een gesprek aanknoopt.",
-                  },
+                    nl: "1. Ik ben vaak degene die een gesprek aanknoopt."
+                  }
                 },
                 {
                   value: "row2",
                   text: {
                     nl:
-                      "2. Ik vind het absoluut geen probleem om in het middelpunt van de belangstelling te staan.",
-                  },
+                      "2. Ik vind het absoluut geen probleem om in het middelpunt van de belangstelling te staan."
+                  }
                 },
                 { value: "row3", text: { nl: "3. Ik praat weinig. " } },
                 {
                   value: "row4",
-                  text: { nl: "4. Ik barst van de energie. " },
+                  text: { nl: "4. Ik barst van de energie. " }
                 },
                 {
                   value: "row5",
                   text: {
-                    nl: "5. Ik steek anderen altijd aan met mijn enthousiasme.",
-                  },
+                    nl: "5. Ik steek anderen altijd aan met mijn enthousiasme."
+                  }
                 },
                 {
                   value: "row6",
-                  text: { nl: "6. Ik hou ervan om alleen te zijn." },
+                  text: { nl: "6. Ik hou ervan om alleen te zijn." }
                 },
                 {
                   value: "row7",
                   text: {
                     nl:
-                      "7. Ik heb liever een handjevol echte vrienden dan een leger aan vrienden. ",
-                  },
+                      "7. Ik heb liever een handjevol echte vrienden dan een leger aan vrienden. "
+                  }
                 },
                 {
                   value: "row8",
                   text: {
                     nl:
-                      "8. Ik geef de voorkeur aan één-op-één gesprekken boven groepsactiviteiten",
-                  },
+                      "8. Ik geef de voorkeur aan één-op-één gesprekken boven groepsactiviteiten"
+                  }
                 },
                 {
                   value: "row9",
                   text: {
                     nl:
-                      "9. Op feestjes of sociale gelegenheden heb ik de tijd van mijn leven. ",
-                  },
+                      "9. Op feestjes of sociale gelegenheden heb ik de tijd van mijn leven. "
+                  }
                 },
                 {
                   value: "row10",
-                  text: { nl: "10. Ik denk niet na voor ik iets zeg." },
+                  text: { nl: "10. Ik denk niet na voor ik iets zeg." }
                 },
                 {
                   value: "row11",
                   text: {
-                    nl: "11. Mensen zeggen dat ik een goede luisteraar ben. ",
-                  },
+                    nl: "11. Mensen zeggen dat ik een goede luisteraar ben. "
+                  }
                 },
                 {
                   value: "row12",
                   text: {
-                    nl:
-                      "12. Ik vind het fijn om nieuwe mensen te leren kennen.",
-                  },
+                    nl: "12. Ik vind het fijn om nieuwe mensen te leren kennen."
+                  }
                 },
                 {
                   value: "row13",
-                  text: { nl: "13. Ik neem niet graag grote risico’s." },
+                  text: { nl: "13. Ik neem niet graag grote risico’s." }
                 },
                 {
                   value: "row14",
                   text: {
                     nl:
-                      "14. Ik neem niet graag de telefoon op, maar laat mensen liever mijn voicemail inspreken. ",
-                  },
-                },
+                      "14. Ik neem niet graag de telefoon op, maar laat mensen liever mijn voicemail inspreken. "
+                  }
+                }
               ],
-              isAllRowRequired: true,
-            },
+              isAllRowRequired: true
+            }
           ],
           questionTitleLocation: "top",
           title: {
-            nl: "Geef aan in hoeverre je het eens bent met elke stelling.",
-          },
-        },
+            nl: "Geef aan in hoeverre je het eens bent met elke stelling."
+          }
+        }
       ],
       calculatedValues: [{ name: "Extrovert" }],
-      sendResultOnPageNext: true,
+      sendResultOnPageNext: false,
       showQuestionNumbers: "off",
       pagePrevText: { nl: "Vorige" },
       pageNextText: { nl: "Volgende" },
       questionTitlePattern: "numTitle",
-      firstPageIsStarted: true,
+      firstPageIsStarted: true
     };
 
     var model = new SurveyVue.Model(json);
 
-    model.onComplete.add(function (result) {
+    model.onComplete.add(function(result) {
       var surveyData = result.data;
       const {
         row1,
@@ -197,7 +196,7 @@ export default {
         row11,
         row12,
         row13,
-        row14,
+        row14
       } = surveyData.questionnaire;
 
       let extravertScore =
@@ -221,11 +220,11 @@ export default {
 
       let intitial;
       switch (true) {
-        case absoluteScore < 5:
+        case absoluteScore < 5 || absoluteScore == 0:
           console.log("Klein verschil");
           intitial = `Je scoort ongeveer even hoog op zowel 'introvert' als 'extravert'. Je hebt geen duidelijke voorkeur, je bent niet opvallend introvert of extravert. Dit noemt men ook wel ambivert: je kunt jezelf niet echt introvert, noch extravert noemen. Dit varieert naargelang het moment en context. Net als een kameleon kun je je makkelijk aan andere mensen aanpassen, want moeilijk zit je niet in elkaar. Soms ga je bewust op zoek naar sociaal contact, terwijl je op andere momenten liever even alleen gelaten wordt. Stabiliteit zit in jouw DNA, en als er iemand een luisterend oor nodig heeft, zit die bij jou aan het juiste adres.`;
           break;
-        case absoluteScore >= 5 &&
+        case 5 <= absoluteScore &&
           absoluteScore <= 15 &&
           extravertScore > introvertScore:
           console.log("Gemiddeld verschil");
@@ -258,21 +257,25 @@ export default {
         "#surveyResult"
       ).textContent = `extravertScore = ${extravertScore}, intervertScore = ${introvertScore} absuluteScore = ${absoluteScore}, text = ${intitial}`;
 
-      router.push({
-        name: "completed",
-        params: {
-          extravertScore: extravertScore,
-          introvertScore: introvertScore,
-          absoluteScore: absoluteScore,
-          text: intitial,
-        },
-      });
+      router
+        .push({
+          name: "completed",
+          params: {
+            extravertScore: extravertScore,
+            introvertScore: introvertScore,
+            absoluteScore: absoluteScore,
+            text: intitial
+          }
+        })
+        .catch(err => {
+          console.err(err);
+        });
     });
 
     return {
-      survey: model,
+      survey: model
     };
-  },
+  }
 };
 </script>
 
