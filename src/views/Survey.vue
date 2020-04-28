@@ -57,7 +57,7 @@ export default {
                   name: "question3",
                   html: {
                     nl:
-                      "<article class='intro'>   <div class='intro__body wysiwyg'>       <p>In this section, you will be asked about your current employment and any other way you and your partner currently receive income.</p>       <p>It will be handy to have the following in front of you:</p>       <ul>        \t<li>        \t\tPayslip (for employment details)        \t</li>        \t<li>        \t\t<p>A current Centrelink Schedule for any account based pension from super, annuities, or other income stream products that you own</p>        \t\t<p>        \t\t\tIf you don't have a current one you can get these schedules by contacting your income stream provider        \t\t</p>        \t</li>        \t<li>        \t\tLatest statement from any payments (from Centrelink or other authority)        \t</li>       </ul>         </div> </article>",
+                      "<article class='intro'>   <div class='intro__body wysiwyg'>       <p>Doe de test: ben je introvert of extravert? Klik op start en kom het te weten!</p>",
                   },
                 },
               ],
@@ -76,11 +76,11 @@ export default {
               isRequired: true,
               requiredErrorText: { nl: "Vul alle vragen in." },
               columns: [
-                { value: "1", text: { nl: "1: Sterk oneens" } },
-                { value: "2", text: { nl: "2: Oneens" } },
-                { value: "3", text: { nl: "3: Neutraal" } },
-                { value: "4", text: { nl: "4: Eens" } },
-                { value: "5", text: { nl: "5: Helemaal eens" } },
+                { value: "1", text: { nl: "Sterk oneens" } },
+                { value: "2", text: { nl: "Oneens" } },
+                { value: "3", text: { nl: "Neutraal" } },
+                { value: "4", text: { nl: "Eens" } },
+                { value: "5", text: { nl: "Helemaal eens" } },
               ],
               rows: [
                 {
@@ -168,10 +168,6 @@ export default {
           title: {
             nl: "Geef aan in hoeverre je het eens bent met elke stelling.",
           },
-          description: {
-            nl:
-              "1 = Sterk oneens\n2 = Oneens\n3 = Neutraal\n4 = Eens\n5 = Helemaal eens\n",
-          },
         },
       ],
       calculatedValues: [{ name: "Extrovert" }],
@@ -227,15 +223,31 @@ export default {
       switch (true) {
         case absoluteScore < 5:
           console.log("Klein verschil");
-          intitial = "Klein verschil, geen duidelijke voorkeur";
+          intitial = `Je scoort ongeveer even hoog op zowel 'introvert' als 'extravert'. Je hebt geen duidelijke voorkeur, je bent niet opvallend introvert of extravert. Dit noemt men ook wel ambivert: je kunt jezelf niet echt introvert, noch extravert noemen. Dit varieert naargelang het moment en context. Net als een kameleon kun je je makkelijk aan andere mensen aanpassen, want moeilijk zit je niet in elkaar. Soms ga je bewust op zoek naar sociaal contact, terwijl je op andere momenten liever even alleen gelaten wordt. Stabiliteit zit in jouw DNA, en als er iemand een luisterend oor nodig heeft, zit die bij jou aan het juiste adres.`;
           break;
-        case absoluteScore >= 5 && absoluteScore <= 15:
+        case absoluteScore >= 5 &&
+          absoluteScore <= 15 &&
+          extravertScore > introvertScore:
           console.log("Gemiddeld verschil");
-          intitial = "Gemiddeld verschil, beperkte voorkeur";
+          intitial =
+            "Je bent eerder extravert dan introvert. Hoewel je geen enorm uitgesproken voorkeur hebt, ben je toch liever in het gezelschap van anderen dan dat je alleen bent. Je houdt het meest van sociale bezigheden en praat graag en veel. Af en toe heb je toch ook nood aan wat rust.";
           break;
-        case absoluteScore > 15:
+        case absoluteScore >= 5 &&
+          absoluteScore <= 15 &&
+          introvertScore > extravertScore:
+          console.log("Gemiddeld verschil");
+          intitial =
+            "Je bent eerder introvert dan extravert: je vindt het fijn om de rust te vinden door bv. op je kamer muziek te luisteren of een boek te lezen. Je hebt liever een rustige avond met een paar goede vrienden dan naar een druk en groot feest te gaan. Sociaal contact vind je niet erg, maar continu nieuwe mensen leren kennen hoeft niet voor jou.";
+          break;
+        case absoluteScore > 15 && extravertScore > introvertScore:
           console.log("Groot verschil");
-          intitial = "Groot verschil, duidelijke voorkeur";
+          intitial =
+            "Je bent uitgesproken extravert. Mensen omschrijven jou als een enthousiaste flapuit die zijn medemens maar zelden met rust laat. Je houdt van veel sociaal contact en babbelt er graag op los. Zonder mensen om je heen voel je je wat verloren.";
+          break;
+        case absoluteScore > 15 && introvertScore > extravertScore:
+          console.log("Groot verschil");
+          intitial =
+            "Je bent uitgesproken introvert. Je verdwaalt graag in je eigen hoofd en je hebt weinig behoefte aan schreeuwerige mensen om zich heen. e bent rustig en gevoelig. Je luistert meer dan dat je praat en denkt goed na voordat je handelt. Je bent graag op jezelf, en net omdat sociaal contact wat moeilijker is, liggen de vrienden die je wel hebt jou des te nauwer aan het hart.";
           break;
         default:
           intitial = "Score kan niet worden bepaald.";
@@ -270,5 +282,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+p {
+  font-size: 16px;
 }
 </style>

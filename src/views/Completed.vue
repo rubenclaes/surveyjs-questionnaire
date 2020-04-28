@@ -5,7 +5,7 @@
       <p class="lead">Bedankt voor het invullen van de vragenlijst.</p>
       <hr class="my-4" />
       <p>Je score is {{ this.absoluteScore.toString() }}.</p>
-      <p>Dit wil zeggen: {{ this.text.toString() }}.</p>
+      <p>Dit wil zeggen: {{ this.text.toString() }}</p>
       <p class="lead">
         <router-link to="/" tag="button" class="btn btn-primary btn-lg"
           >Opnieuw</router-link
